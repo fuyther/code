@@ -1,3 +1,23 @@
+import sys
+
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5 import uic
+
+
+class MyWidget(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        uic.loadUi("morze_ui.ui", self)
+
+        self.translate_btn.clicked.connect(self.run)
+
+    def run(self):
+        inp = self.textEdit.toPlainText()
+        answer = to_morze(inp)
+        self.answer_l.setText(answer)
+
 def to_morze(string):
     alphabet = {
         "А": "· −", "Б": "− · · ·", "В": "· − −", "Г": "− − ·", "Д": "− · ·", "Е": "·", "Ж": "· · · −", "З": "− − · ·",
@@ -21,11 +41,14 @@ def to_morze(string):
         symbol = symbol.upper()
         if symbol in en_to_ru.keys():
             symbol = en_to_ru[symbol]
-        if symbol != " ":
+        if symbol != " " and symbol != "\n":
             result += alphabet[symbol] + "  "
         else:
             result += "  "
     return result
 
 
-print(to_morze(input()))
+app = QApplication(sys.argv)
+ex = MyWidget()
+ex.show()
+sys.exit(app.exec_())
