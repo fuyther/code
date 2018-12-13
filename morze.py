@@ -11,12 +11,27 @@ class MyWidget(QMainWindow):
 
         uic.loadUi("morze_ui.ui", self)
 
+        self.lang = "ru"
         self.translate_btn.clicked.connect(self.run)
+        self.btnTrans.clicked.connect(self.trans)
 
     def run(self):
         inp = self.textEdit.toPlainText()
         answer = to_morze(inp)
         self.answer_l.setText(answer)
+
+    def trans(self):
+        if self.lang == "ru":
+            self.label.setText("Translation to the Morse. Enter the text:")
+            self.translate_btn.setText("Translate")
+            self.lang = "en"
+        elif self.lang == "en":
+            self.label.setText("Перевод в шифр морзе. Введите текст:")
+            self.translate_btn.setText("Перевести")
+            self.lang = "ru"
+        else:
+            self.label.setText("ERROR")
+
 
 def to_morze(string):
     alphabet = {
@@ -46,9 +61,3 @@ def to_morze(string):
         else:
             result += "  "
     return result
-
-
-app = QApplication(sys.argv)
-ex = MyWidget()
-ex.show()
-sys.exit(app.exec_())
