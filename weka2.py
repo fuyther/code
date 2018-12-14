@@ -11,7 +11,7 @@ from MainWindow import Ui_MainWindow
 class Example(QMainWindow):
     def __init__(self):
         super().__init__()
-        col = QColor(95, 158, 160)
+        col = QColor(0, 206, 209)
         self.frm = QFrame(self)
         self.frm.setStyleSheet("QWidget { background-color: %s }" % col.name())
         self.frm.setGeometry(0, 0, 610, 600)
