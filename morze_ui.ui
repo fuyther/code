@@ -28,7 +28,7 @@
      <rect>
       <x>200</x>
       <y>80</y>
-      <width>401</width>
+      <width>449</width>
       <height>321</height>
      </rect>
     </property>
@@ -48,8 +48,14 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Yandex-UI-Icons-Private</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>Перевод в шифр морзе. Введите текст:</string>
+        <string>Перевод в шифр Морзе. Введите текст:</string>
        </property>
       </widget>
      </item>
@@ -85,6 +91,12 @@ p, li { white-space: pre-wrap; }
      </item>
      <item>
       <widget class="QPushButton" name="translate_btn">
+       <property name="font">
+        <font>
+         <family>Yandex-UI-Icons-Private</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <property name="cursor">
         <cursorShape>UpArrowCursor</cursorShape>
        </property>
@@ -162,7 +174,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>804</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

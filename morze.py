@@ -1,16 +1,19 @@
-import sys
-
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 from PyQt5 import uic
+from PyQt5 import QtGui
+import sys
 
 
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-
+        col = QColor(255, 160, 122)
+        self.frm = QFrame(self)
+        self.frm.setStyleSheet("QWidget { background-color: %s }" % col.name())
+        self.frm.setGeometry(0, 0, 1000, 600)
         uic.loadUi("morze_ui.ui", self)
-
         self.lang = "ru"
         self.translate_btn.clicked.connect(self.run)
         self.btnTrans.clicked.connect(self.trans)
