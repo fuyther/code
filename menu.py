@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 from calc2 import MainWindow
@@ -8,10 +9,25 @@ from PyQt5.QtWidgets import *
 
 from PyQt5 import uic
 
+=======
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QLCDNumber
+from math import sqrt
+from PyQt5 import uic
+from PyQt5 import QtGui
+>>>>>>> 43e7f002f49d0123841779f1c0b2cc90360648ab
 import sys
 from morze import MyWidget
 from weka2 import Example
 
+<<<<<<< HEAD
+=======
+from calc2 import MainWindow
+
+
+>>>>>>> 43e7f002f49d0123841779f1c0b2cc90360648ab
 class Widget(QMainWindow):
     def __init__(self):
         super().__init__()
